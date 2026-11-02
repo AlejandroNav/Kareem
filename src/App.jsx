@@ -1,17 +1,17 @@
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 import "./App.css";
 
 function App() {
-  return (
-    <>
-      <Header />
+    return (
+        <>
+            <Header />
 
-      <main>
-        <h1>Kareem Amrabat</h1>
-        <p>Business & Investments</p>
-      </main>
-    </>
-  );
+            <main>
+                <Hero />
+            </main>
+        </>
+    );
 }
 
 export default App;
