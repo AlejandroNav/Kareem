@@ -1,0 +1,228 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+position: relative;
+    padding: 1.5rem 3rem;
+    background-color: #ffffff;
+    border-bottom: 0.0625rem solid #dddddd;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-logo {
+    font-family: Georgia, serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+    letter-spacing: -0.1875rem;
+    color: #111111;
+}
+
+.brand-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    display: inline-block;
+    color: #222222;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.5em 0;
+    border-bottom: 0.125rem solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.header-nav a:hover {
+    color: #000000;
+    border-bottom-color: #000000;
+}
+
+.header-nav a:focus-visible {
+    color: #000000;
+    border-bottom-color: #000000;
+    outline: 0.125rem solid #000000;
+    outline-offset: 0.25rem;
+}
+
+.header-languages {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-languages button {
+    background: none;
+    border: none;
+    color: #222222;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5em 0.125em;
+}
+
+.header-languages span {
+    color: #777777;
+    font-size: 1rem;
+}
+
+.header-languages button:hover {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 0.3125rem;
+}
+
+.header-languages button:focus-visible {
+    outline: 0.125rem solid #000000;
+    outline-offset: 0.1875rem;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 64rem) {
+    .site-header {
+        padding: 1rem 1.5rem;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .header-languages {
+        margin-left: auto;
+    }
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+
+    padding: 0;
+    background-color: transparent;
+    border: 0.125rem solid transparent;
+    border-radius: 0.25rem;
+
+    color: #111111;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.header-nav.nav-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background-color: #242424;
+    border-top: 0.0625rem solid #555555;
+    border-bottom: 0.0625rem solid #555555;
+    padding: 1rem 1.5rem;
+    z-index: 10;
+}
+
+.header-nav.nav-open ul {
+    flex-direction: column;
+    gap: 0;
+}
+
+.header-nav.nav-open li {
+    border-bottom: 0.0625rem solid #484848;
+}
+
+.header-nav.nav-open li:last-child {
+    border-bottom: none;
+}
+
+.header-nav.nav-open a {
+    display: block;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.875rem 0.5rem;
+    border-bottom: none;
+}
+
+.header-nav.nav-open a:hover {
+    color: #ffffff;
+    background-color: #404040;
+}
+
+.header-nav.nav-open a:focus-visible {
+    color: #ffffff;
+    background-color: #404040;
+    outline: 0.125rem solid #ffffff;
+    outline-offset: -0.125rem;
+}
+}
+
+.menu-toggle:hover {
+    background-color: #e5e5e5;
+    color: #000000;
+}
+
+.menu-toggle:focus-visible {
+    outline: 0.125rem solid #000000;
+    outline-offset: 0.1875rem;
+}
+
+.menu-toggle:active {
+    background-color: #cccccc;
+}
+
+@media (max-width: 30rem) {
+    .site-header {
+        padding: 0.75rem 1rem;
+        gap: 0.5rem;
+    }
+
+    .brand-name {
+        font-size: 0.75rem;
+        letter-spacing: 0.0625rem;
+    }
+
+    .brand-logo {
+        font-size: 1.875rem;
+    }
+
+    .header-languages {
+        gap: 0.25rem;
+    }
+}
+@media (min-width: 1980px) {
+    .site-header {
+        padding: 1.5rem max(3rem, calc((100% - 1600px) / 2));
+        gap: 3rem;
+    }
+
+    .header-nav ul {
+        gap: 2rem;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+}
