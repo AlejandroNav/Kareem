@@ -1,12 +1,25 @@
+/* =========================================
+   1. HEADER PRINCIPAL
+   ========================================= */
+
 .site-header {
+    /* Flexbox coloca marca, navegación e idiomas en una fila */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-position: relative;
-    padding: 1.5rem 3rem;
+    justify-content: space-around;
+
+    /* Referencia para posicionar el menú móvil absoluto */
+    position: relative;
+
+    padding: .9rem 4rem;
     background-color: #ffffff;
     border-bottom: 0.0625rem solid #dddddd;
 }
+
+
+/* =========================================
+   2. IDENTIDAD DE MARCA
+   ========================================= */
 
 .header-brand {
     display: flex;
@@ -18,21 +31,31 @@ position: relative;
     font-family: Georgia, serif;
     font-size: 2.25rem;
     font-weight: bold;
-    letter-spacing: -0.1875rem;
+
+    /* Espaciado negativo para compactar las letras KA */
+    letter-spacing: -0.1075rem;
+
     color: #111111;
 }
 
 .brand-name {
     font-size: 0.9375rem;
     font-weight: 600;
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.075rem;
     text-transform: uppercase;
     color: #222222;
 }
 
+
+/* =========================================
+   3. NAVEGACIÓN DESKTOP
+   ========================================= */
+
 .header-nav ul {
     display: flex;
     gap: 1.75rem;
+
+    /* Elimina estilos predeterminados de las listas */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -44,22 +67,32 @@ position: relative;
     text-decoration: none;
     font-size: 0.9375rem;
     font-weight: 500;
-    padding: 0.5em 0;
-    border-bottom: 0.125rem solid transparent;
-    transition: border-color 0.2s ease;
+    padding: 0.5em .75rem;
+
+    /* Reserva el espacio del subrayado para evitar saltos */
+    border-bottom: 0.225rem solid transparent;
+
+    /* Anima solamente el cambio de color del borde */
+    transition: border-color 0.5s ease;
 }
 
 .header-nav a:hover {
     color: #000000;
-    border-bottom-color: #000000;
+    border-bottom-color: #15b16b;
 }
 
+/* Accesibilidad: indica qué enlace tiene foco de teclado */
 .header-nav a:focus-visible {
-    color: #000000;
-    border-bottom-color: #000000;
-    outline: 0.125rem solid #000000;
+    color: #15b16b;
+    border-bottom-color: #15b16b;
+    outline: 0.125rem solid #dc3b3b;
     outline-offset: 0.25rem;
 }
+
+
+/* =========================================
+   4. SELECTOR DE IDIOMAS
+   ========================================= */
 
 .header-languages {
     display: flex;
@@ -77,6 +110,7 @@ position: relative;
     padding: 0.5em 0.125em;
 }
 
+/* Separador visual entre FR y ES */
 .header-languages span {
     color: #777777;
     font-size: 1rem;
@@ -93,92 +127,131 @@ position: relative;
     outline-offset: 0.1875rem;
 }
 
+/* Idioma seleccionado */
+.header-languages button.active {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 0.6125rem;
+}
+
+/* Idioma no seleccionado */
+.header-languages button:not(.active) {
+    color: #777777;
+}
+
+
+/* =========================================
+   5. BOTÓN DEL MENÚ MÓVIL
+   ========================================= */
+
+/* Oculto por defecto en pantallas grandes */
 .menu-toggle {
     display: none;
 }
 
+
+/* =========================================
+   6. TABLETS Y PANTALLAS MEDIANAS
+   ========================================= */
+
 @media (max-width: 64rem) {
+
     .site-header {
-        padding: 1rem 1.5rem;
+        padding: 1rem 2.5rem;
         justify-content: flex-start;
         gap: 1rem;
     }
 
+    /* Oculta navegación horizontal */
     .header-nav {
         display: none;
     }
 
+    /*
+       Empuja idiomas y hamburguesa hacia la derecha
+       gracias al margen automático.
+    */
     .header-languages {
         margin-left: auto;
     }
 
-.menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    width: 2.75rem;
-    height: 2.75rem;
-    flex-shrink: 0;
+        width: 3.75rem;
+        height: 2.75rem;
+        flex-shrink: 0;
 
-    padding: 0;
-    background-color: transparent;
-    border: 0.125rem solid transparent;
-    border-radius: 0.25rem;
+        padding: 0;
+        background-color: transparent;
+        border: 0.125rem solid transparent;
+        border-radius: 0.25rem;
 
-    color: #111111;
-    font-size: 1.75rem;
-    line-height: 1;
-    cursor: pointer;
+        color: #111111;
+        font-size: 1.75rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    /* Clase agregada por React cuando el menú está abierto */
+    .header-nav.nav-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background-color: #242424;
+        border-top: 0.0625rem solid #555555;
+        border-bottom: 0.0625rem solid #555555;
+        padding: 1rem 2.5rem;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 0.12);
+        /* Mantiene el menú encima del contenido normal */
+        z-index: 10;
+    }
+
+    .header-nav.nav-open ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .header-nav.nav-open li {
+        border-bottom: 0.0625rem solid #484848;
+    }
+
+    .header-nav.nav-open li:last-child {
+        border-bottom: none;
+    }
+
+    .header-nav.nav-open a {
+        display: block;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.875rem 0.5rem;
+        border-bottom: none;
+    }
+
+    .header-nav.nav-open a:hover {
+        color: #ffffff;
+        background-color: #404040;
+    }
+
+    .header-nav.nav-open a:focus-visible {
+        color: #ffffff;
+        background-color: #404040;
+        outline: 0.125rem solid #ffffff;
+        outline-offset: -0.125rem;
+    }
 }
-.header-nav.nav-open {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
 
-    background-color: #242424;
-    border-top: 0.0625rem solid #555555;
-    border-bottom: 0.0625rem solid #555555;
-    padding: 1rem 1.5rem;
-    z-index: 10;
-}
 
-.header-nav.nav-open ul {
-    flex-direction: column;
-    gap: 0;
-}
+/* =========================================
+   7. INTERACCIONES DEL BOTÓN HAMBURGUESA
+   ========================================= */
 
-.header-nav.nav-open li {
-    border-bottom: 0.0625rem solid #484848;
-}
-
-.header-nav.nav-open li:last-child {
-    border-bottom: none;
-}
-
-.header-nav.nav-open a {
-    display: block;
-    color: #ffffff;
-    font-size: 1rem;
-    padding: 0.875rem 0.5rem;
-    border-bottom: none;
-}
-
-.header-nav.nav-open a:hover {
-    color: #ffffff;
-    background-color: #404040;
-}
-
-.header-nav.nav-open a:focus-visible {
-    color: #ffffff;
-    background-color: #404040;
-    outline: 0.125rem solid #ffffff;
-    outline-offset: -0.125rem;
-}
-}
-
+/* Estas reglas están fuera del media query a propósito */
 .menu-toggle:hover {
     background-color: #e5e5e5;
     color: #000000;
@@ -193,7 +266,13 @@ position: relative;
     background-color: #cccccc;
 }
 
+
+/* =========================================
+   8. TELÉFONOS PEQUEÑOS
+   ========================================= */
+
 @media (max-width: 30rem) {
+
     .site-header {
         padding: 0.75rem 1rem;
         gap: 0.5rem;
@@ -212,13 +291,29 @@ position: relative;
         gap: 0.25rem;
     }
 }
+
+
+/* =========================================
+9. PANTALLAS ULTRAWIDE
+   ========================================= */
+
 @media (min-width: 1980px) {
+
     .site-header {
+        /*
+        max() utiliza el mayor de estos dos valores:
+        3rem
+        o
+        (ancho disponible - 1600px) / 2
+        Esto mantiene márgenes más amplios en monitores
+        grandes y centra visualmente el contenido.
+        */
         padding: 1.5rem max(3rem, calc((100% - 1600px) / 2));
+
         gap: 3rem;
     }
 
-    .header-nav ul {
+    l .header-nav ul {
         gap: 2rem;
     }
 

@@ -7,8 +7,10 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+
+    /* NUEVO: reemplaza Arial */
+    font-family: "Manrope", Arial, sans-serif;
 }
 
 img {

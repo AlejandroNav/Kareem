@@ -1,0 +1,267 @@
+
+/* =========================================
+   1. SECCIÓN EMPRESAS
+   ========================================= */
+
+.empresas {
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.empresas-container {
+    width: 100%;
+    max-width: 100rem;
+    margin-inline: auto;
+
+    /* CAMBIO: menos espacio superior e inferior */
+    padding: 2rem 4rem 3rem;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   2. ENCABEZADO
+   ========================================= */
+
+.empresas-heading {
+    max-width: 46rem;
+
+    /* CAMBIO: acercar tarjetas al encabezado */
+    margin-bottom: 1.5rem;
+}
+
+.empresas-eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+
+    /* NUEVO: evitar márgenes inesperados */
+    margin: 0;
+}
+
+.empresas-heading h2 {
+
+font-family: "Fraunces", Georgia, serif;    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+
+    /* CAMBIO: menos separación */
+    margin: 0.75rem 0;
+}
+
+.empresas-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #bdbdbd;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   3. GRID DE EMPRESAS
+   ========================================= */
+
+.empresas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    /* CAMBIO: tarjetas más juntas */
+    gap: 0.75rem;
+}
+
+
+/* =========================================
+   4. TARJETAS COMPACTAS
+   ========================================= */
+
+.empresa-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    /* CAMBIO: eliminamos min-height: 22rem */
+    padding: 1.25rem;
+
+    background-color: #303030;
+    border: 0.0625rem solid #444444;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.empresa-card:hover {
+    background-color: #383838;
+    border-color: #777777;
+}
+
+/* Número y ubicación */
+.empresa-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.empresa-number,
+.empresa-location {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+}
+
+.empresa-location {
+    text-align: right;
+}
+
+
+/* =========================================
+   5. LOGOTIPOS
+   ========================================= */
+
+/* Monograma temporal; después usaremos logos reales */
+.empresa-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    /* CAMBIO: menos separación */
+    margin: 1rem 0;
+
+    border: 0.0625rem solid #777777;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Para cuando agreguemos imágenes de logos */
+.empresa-symbol img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   6. CONTENIDO DE LAS TARJETAS
+   ========================================= */
+
+.empresa-card-content {
+    margin-top: 0;
+}
+
+.empresa-sector {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+
+    margin: 0;
+}
+
+.empresa-card-content h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    margin: 0.375rem 0;
+}
+
+.empresa-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #cccccc;
+    max-width: 34rem;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   7. TABLETS — HASTA 1024px
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    .empresas-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .empresas-heading h2 {
+        font-size: 2.75rem;
+    }
+
+    .empresa-card {
+        padding: 1rem;
+    }
+}
+
+
+/* =========================================
+   8. TELÉFONOS — HASTA 600px
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .empresas-container {
+        padding: 1.5rem 1.25rem 2rem;
+    }
+
+    .empresas-heading {
+        margin-bottom: 1.25rem;
+    }
+
+    .empresas-heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .empresas-intro {
+        font-size: 0.9375rem;
+    }
+
+    /* Una tarjeta por fila */
+    .empresas-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.625rem;
+    }
+
+    .empresa-card {
+        padding: 1rem;
+    }
+
+    .empresa-symbol {
+        width: 3rem;
+        height: 3rem;
+        margin: 0.75rem 0;
+    }
+
+    .empresa-card-content h3 {
+        font-size: 1.625rem;
+    }
+}
+
+
+/* =========================================
+   9. ACCESIBILIDAD
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .empresa-card {
+        transition: none;
+    }
+}
