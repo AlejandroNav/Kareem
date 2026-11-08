@@ -1,0 +1,247 @@
+/* =========================================
+   1. SECCIÓN CONTRIBUCIÓN
+   ========================================= */
+
+.contribucion {
+    background-color: #252525;
+    color: #ffffff;
+}
+
+.contribucion-container {
+    width: 100%;
+    max-width: 100rem;
+    margin-inline: auto;
+    padding: 3rem 4rem;
+    box-sizing: border-box;
+}
+/* =========================================
+   2. ENCABEZADO SUPERIOR
+   ========================================= */
+
+.contribucion-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.contribucion-eyebrow,
+.contribucion-regions {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bdbdbd;
+}
+/* =========================================
+   3. MENSAJE PRINCIPAL
+   ========================================= */
+
+.contribucion-heading {
+    max-width: 52rem;
+    padding: 1.5rem 0 2rem;
+}
+
+.contribucion-heading h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+
+    margin: 0 0 1rem;
+}
+/* Palabras destacadas en cursiva */
+.contribucion-heading h2 em {
+    font-weight: 400;
+    color: #d3d3d3;
+}
+
+.contribucion-intro {
+    max-width: 42rem;
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #d0d0d0;
+}
+
+/* =========================================
+   4. GRID DE INICIATIVAS
+   ========================================= */
+
+.contribucion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+
+    border-top: 0.0625rem solid #626262;
+    border-bottom: 0.0625rem solid #626262;
+    padding: 2rem 5rem;
+}
+/* =========================================
+   5. BLOQUES DE CONTRIBUCIÓN
+   ========================================= */
+
+.contribucion-item {
+    min-width: 0;
+    padding: 1.5rem 0 2rem;
+}
+
+/* Separador vertical entre Marruecos y México */
+.contribucion-item + .contribucion-item {
+    border-left: 0.0625rem solid #626262;
+    padding-left: 2rem;
+}
+
+/* País y numeración */
+.contribucion-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contribucion-item-top span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bdbdbd;
+}
+
+/* Símbolo editorial */
+.contribucion-mark {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #eeeeee;
+
+    margin: 1.5rem 0;
+}
+
+/* Título de cada iniciativa */
+.contribucion-item h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+
+    margin: 0 0 0.75rem;
+}/* Descripción */
+.contribucion-item p {
+    max-width: 32rem;
+    margin: 0;
+
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: #c7c7c7;
+}
+/* =========================================
+   6. CIERRE DE SECCIÓN
+   ========================================= */
+
+.contribucion-bottom {
+    padding-top: 1.25rem;
+}
+
+.contribucion-bottom span {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bdbdbd;
+}
+
+/* =========================================
+   7. TABLETS — HASTA 1024px
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    .contribucion-container {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .contribucion-heading h2 {
+        font-size: 3rem;
+    }
+}
+
+
+/* =========================================
+   8. TELÉFONOS — HASTA 600px
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .contribucion-container {
+        padding: 2rem 1.25rem;
+    }
+
+    /* Encabezado superior */
+    .contribucion-regions {
+        font-size: 0.625rem;
+        text-align: right;
+    }
+
+    /* Mensaje principal */
+    .contribucion-heading {
+        padding: 1.5rem 0;
+    }
+
+    .contribucion-heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .contribucion-intro {
+        font-size: 0.9375rem;
+    }
+
+    /* Una iniciativa por fila */
+    .contribucion-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .contribucion-item {
+        padding: 1.5rem 0;
+    }
+
+    /* Separador horizontal en lugar de vertical */
+    .contribucion-item + .contribucion-item {
+        border-left: none;
+        border-top: 0.0625rem solid #626262;
+        padding-left: 0;
+    }
+
+    .contribucion-mark {
+        margin: 1rem 0;
+    }
+
+    .contribucion-item h3 {
+        font-size: 1.75rem;
+    }
+}
+
+
+/* =========================================
+   9. PANTALLAS ULTRAWIDE
+   ========================================= */
+
+@media (min-width: 1980px) {
+
+    .contribucion-container {
+        max-width: 100rem;
+    }
+}
+
+
+/* =========================================
+   10. ACCESIBILIDAD
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contribucion-item {
+        transition: none;
+    }
+}

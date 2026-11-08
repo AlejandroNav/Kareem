@@ -1,0 +1,180 @@
+
+/* =========================================
+   1. SECCIÓN CONTACTO
+   ========================================= */
+
+.contacto {
+    background-color: #e8e7e4;
+    color: #1c1c1c;
+}
+.contacto-container {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 4rem;
+
+    max-width: 100rem;
+    margin-inline: auto;
+    padding: 4rem;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   2. ENCABEZADO
+   ========================================= */
+
+.contacto-eyebrow {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.contacto-heading h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    margin: 1rem 0;
+}
+.contacto-heading h2 em {
+    font-weight: 400;
+    color: #259107;
+}
+
+.contacto-description {
+    max-width: 36rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #555555;
+}
+/* =========================================
+   3. MEDIOS DE CONTACTO
+   ========================================= */
+
+.contacto-methods {
+    display: flex;
+    flex-direction: column;
+    border-top: 0.1625rem solid #b5b5b5;
+}
+.contacto-method {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 1.5rem 0;
+    border-bottom: 0.1225rem solid #b5b5b5;
+}
+.contacto-method-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.contacto-method-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: #1c1c1c;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    transition: color 0.2s ease;
+}
+a.contacto-method-link:hover {
+    color: #278c17;
+    border-bottom: #259107 0.125rem solid;
+}
+
+a.contacto-method-link:focus-visible {
+    outline: 0.125rem solid #1c1c1c;
+    outline-offset: 0.25rem;
+}
+
+.contacto-method-link span {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 1.25rem;
+}
+
+.contacto-method-placeholder {
+    cursor: default;
+}
+.contacto-note {
+    grid-column: 2;
+    margin: -3rem 0 0;
+    font-size: 0.75rem;
+    color: #777777;
+}
+
+/* =========================================
+   4. TABLETS — HASTA 1024px
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    .contacto-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .contacto-heading h2 {
+        font-size: 3rem;
+    }
+
+    .contacto-note {
+        grid-column: 1;
+        margin: -1rem 0 0;
+    }
+}
+
+
+/* =========================================
+   5. TELÉFONOS — HASTA 600px
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .contacto-container {
+        padding: 2.5rem 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .contacto-heading h2 {
+        font-size: 2.5rem;
+    }
+
+    .contacto-description {
+        font-size: 0.9375rem;
+    }
+
+    .contacto-method-link {
+        font-size: 1.375rem;
+    }
+
+    .contacto-method {
+        padding: 1.25rem 0;
+    }
+}
+
+
+/* =========================================
+   6. ACCESIBILIDAD
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contacto-method-link {
+        transition: none;
+    }
+}

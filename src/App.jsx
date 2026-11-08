@@ -5,6 +5,10 @@ import Empresas from "./components/Empresas";
 
 import "./App.css";
 import Servicios from "./components/Servicios";
+import Contribucion from "./components/Contribucion";
+import Contacto from "./components/Contacto";
+import Footer from "./components/Footer";
+
 
 function App() {
     return (
@@ -16,7 +20,11 @@ function App() {
                 <About />
                 <Empresas />
                 <Servicios />
+                <Contribucion />
+                <Contacto />
             </main>
+
+            <Footer />
         </>
     );
 }
